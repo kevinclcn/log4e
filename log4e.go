@@ -3,6 +3,7 @@ package log4e
 import (
 	"github.com/sirupsen/logrus"
 	"github.com/labstack/gommon/log"
+	"io"
 )
 
 
@@ -12,6 +13,34 @@ var logger = &Logger4e{
 
 func Logger() *Logger4e  {
 	return logger
+}
+
+func Output() io.Writer {
+	return logger.Out
+}
+
+func SetOutput(out io.Writer) {
+	logger.SetOutput(out)
+}
+
+// SetFormatter sets the standard logger formatter.
+func SetFormatter(formatter logrus.Formatter) {
+	logger.Formatter = formatter
+}
+
+// SetLevel sets the standard logger level.
+func SetLevel(level log.Lvl) {
+	logger.SetLevel(level)
+}
+
+// GetLevel returns the standard logger level.
+func Level() log.Lvl {
+	return logger.Level()
+}
+
+// AddHook adds a hook to the standard logger hooks.
+func AddHook(hook logrus.Hook) {
+	logger.AddHook(hook)
 }
 
 func Print(i ...interface{}) {
