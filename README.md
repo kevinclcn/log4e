@@ -1,5 +1,7 @@
 # log4e
 
+logrus for echo framework
+
 ## Example
 
 ```go
