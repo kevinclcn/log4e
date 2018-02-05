@@ -18,7 +18,7 @@ func Logger() *Logger4e  {
 type Fields map[string]interface{}
 
 func WithFields(fields Fields) *Entry4e  {
-	return &Entry4e{Entry:logger.WithFields(logrus.Fields(fields))}
+	return logger.WithFields(fields)
 }
 
 func Output() io.Writer {

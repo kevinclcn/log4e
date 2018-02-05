@@ -10,6 +10,10 @@ type Logger4e struct {
 	*logrus.Logger
 }
 
+func (l *Logger4e) WithFields(fields Fields) *Entry4e  {
+	return &Entry4e{l.Logger.WithFields(logrus.Fields(fields))}
+}
+
 func (l *Logger4e) Output() io.Writer {
 	return l.Out
 }
