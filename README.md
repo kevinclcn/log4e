@@ -1,6 +1,6 @@
 # log4e
 
-An [echo](https://github.com/labstack/echo) logger implemented in logrus
+An [echo](https://github.com/labstack/echo) logger implementation in logrus
 
 ## Example
 
